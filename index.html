@@ -17,22 +17,14 @@
         <div class="logo">
             <img src="img/logo.png" alt="Logo Boolean">
         </div>
-        <form class="new-task">
-            <input type="text" placeholder="Inserisci testo Todo" id="">
+        <form class="new-task" @submit.prevent="addToDo">
+            <input type="text" placeholder="Inserisci testo Todo" v-model="newToDo" required/>
             <button type="submit">Aggiungi</button>
         </form>
         <div class="task-container">
             <ul>
-                <li class="task">
-                    Fare i compiti
-                    <i class="fa-solid fa-x"></i>
-                </li>
-                <li class="task">
-                    Andare in palestra
-                    <i class="fa-solid fa-x"></i>
-                </li>
-                <li class="task">
-                    Andare a fare la spesa
+                <li class="task" v-for="toDo in toDoList">
+                    {{ toDo.text }}
                     <i class="fa-solid fa-x"></i>
                 </li>
             </ul>
