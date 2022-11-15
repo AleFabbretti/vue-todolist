@@ -22,9 +22,9 @@
             <button type="submit">Aggiungi</button>
         </form>
         <div class="task-container">
-            <ul>
-                <li class="task" v-for="toDo in toDoList">
-                    <span>{{ toDo.text }}</span>
+            <ul v-if="toDoList.length > 0">
+                <li class="task" v-for="(toDo, index) in toDoList" :class="{done: toDo.done === true}">
+                    <span @click="toDo.done = !toDo.done">{{ toDo.text }}</span>
                     <i class="fa-solid fa-x"></i>
                 </li>
             </ul>
