@@ -23,9 +23,15 @@ createApp({
       }
     },
     methods : {
-        addTodo() {
+        addToDo() {
+            if( this.newTodo !== '' ) {
+                this.newTodo = {
+                    text: this.newTodo,
+                    done: false,
+                };
             this.toDoList.push(this.newTodo);
             this.newTodo = '';
         }
+    },
     }
   }).mount('#app')

@@ -18,13 +18,13 @@
             <img src="img/logo.png" alt="Logo Boolean">
         </div>
         <form class="new-task" @submit.prevent="addToDo">
-            <input type="text" placeholder="Inserisci testo Todo" v-model="newToDo" required/>
+            <input type="text" placeholder="Inserisci testo Todo" v-model="newTodo" required>
             <button type="submit">Aggiungi</button>
         </form>
         <div class="task-container">
             <ul>
                 <li class="task" v-for="toDo in toDoList">
-                    {{ toDo.text }}
+                    <span>{{ toDo.text }}</span>
                     <i class="fa-solid fa-x"></i>
                 </li>
             </ul>
